@@ -34,5 +34,4 @@ typedef struct {
 mach_msg_return_t sendMessage(char *content, mach_port_t from, mach_port_t to);
 mach_msg_return_t rcvMessage(char *outputContent, mach_port_t rcvPort);
 mach_port_t connect_to_service(const char* service_name);
-mach_port_t task_for_pid_workaround(int Pid);
 #endif
