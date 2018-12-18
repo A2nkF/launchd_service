@@ -1,15 +1,10 @@
 # launchd_service
+**This is an example for an exploitable launchd service.**
 
 The server registers a launchd service and waits for mach messages which the client can send.
 I'm using the [`bootstrap_check_in`](http://www.manpagez.com/man/3/bootstrap_check_in/) function to register my service.
+The message handling of the service is broken, which allows an attacker to exploit it and gain code execution inside of the service.
 
-## NOTE
-
-1. I intentionally included a format-string vulnerability in `server.c`. 
-If you aren't trying to exploit the service, you should change the `printf(msg)` in the last line to 
-`printf("%s", msg)`  
-
-2. I think this is obvious, but in case it isn't: **you will need MacOS to run this**.
 
 ## Build
 
